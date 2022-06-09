@@ -1,0 +1,25 @@
+﻿@model List<KrivtsovCourseWork.Models.DatabaseModel.Patient>
+
+<div class="text-center">
+    <h1 class="display-4">Записи</h1>
+
+    <div class="row cart-margin mt-2">
+            @foreach (var patient in Model)
+            {
+                <div class="col-auto">
+                    <div class="card h-auto mt-3 mb-5" style="width: 25.5rem">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">@patient.SecondName @patient.FirstName</h5>
+                            <p>
+                                @foreach (var diagnosis in patient.Diagnosis)
+                                {
+                                    <text>@diagnosis.Name</text>
+                                }
+                            </p>
+                            <p class="mt-3 fs-6"><text class="fw-bold">@patient.Visit.Date</text></p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+</div>
